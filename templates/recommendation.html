@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Helvetica" rel="stylesheet">
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color:#e6b91e;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #000000;
+}
+
+.active {
+  background-color: #353535;
+}
+</style>
+</head>
+<body style="background-color:#e6b91e">
+
+<ul>
+  <li><a href="http://127.0.0.1:5000/">Recommendation<span class="sr-only">(current)</a></li>
+  <li><a href="http://127.0.0.1:5000/visualization">Exploratory Data Analysis</a></li>
+  <li><a href="http://127.0.0.1:5000/dataset">Dataset</a></li>
+  <li style="float:right"><a class="active" href="https://imdb.com">IMDb Website</a></li>
+  <li><a href="http://127.0.0.1:5000/about">About</a></li>
+</ul>
+    
+    <center>
+        <img src="https://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png" width=100>
+        <br>
+        <h3>"Movies Similar to {{name.title()}}"</h3>
+        <table class=".thead table-responsive" style="max-width: 1250px;margin-left:auto;margin-right:auto" border="3" bordercolor="000000";>
+          <thead>
+              <!-- <tr class="bg-dark"> -->
+                <th scope="col" style="text-align:center" class="text-black">Budget</th>
+                <th scope="col" style="text-align:center" class="text_black">Company</th>
+                <th scope="col" style="text-align:center" class="text_black">Country</th>
+                <th scope="col" style="text-align:center" class="text_black">Director</th>
+                <th scope="col" style="text-align:center" class="text_black">Genre</th>
+                <th scope="col" style="text-align:center" class="text_black">Gross</th>
+                <th scope="col" style="text-align:center" class="text_black">Name</th>
+                <th scope="col" style="text-align:center" class="text_black">Rating</th>
+                <th scope="col" style="text-align:center" class="text_black">Released</th>
+                <th scope="col" style="text-align:center" class="text_black">Runtime</th>
+                <th scope="col" style="text-align:center" class="text_black">Score</th>
+                <th scope="col" style="text-align:center" class="text_black">Star</th>
+                <th scope="col" style="text-align:center" class="text_black">Votes</th>
+                <th scope="col" style="text-align:center" class="text_black">Writer</th>
+                <th scope="col" style="text-align:center" class="text_black">Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[0]}}</td>
+                <td>{{movie.company.iloc[0]}}</td>
+                <td>{{movie.country.iloc[0]}}</td>
+                <td>{{movie.director.iloc[0]}}</td>
+                <td>{{movie.genre.iloc[0]}}</td>
+                <td>{{movie.gross.iloc[0]}}</td>
+                <td>{{movie.name.iloc[0]}}</td>
+                <td>{{movie.rating.iloc[0]}}</td>
+                <td>{{movie.released.iloc[0]}}</td>
+                <td>{{movie.runtime.iloc[0]}}</td>
+                <td>{{movie.score.iloc[0]}}</td>
+                <td>{{movie.star.iloc[0]}}</td>
+                <td>{{movie.votes.iloc[0]}}</td>
+                <td>{{movie.writer.iloc[0]}}</td>
+                <td>{{movie.year.iloc[0]}}</td>
+              </tr>
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[1]}}</td>
+                <td>{{movie.company.iloc[1]}}</td>
+                <td>{{movie.country.iloc[1]}}</td>
+                <td>{{movie.director.iloc[1]}}</td>
+                <td>{{movie.genre.iloc[1]}}</td>
+                <td>{{movie.gross.iloc[1]}}</td>
+                <td>{{movie.name.iloc[1]}}</td>
+                <td>{{movie.rating.iloc[1]}}</td>
+                <td>{{movie.released.iloc[1]}}</td>
+                <td>{{movie.runtime.iloc[1]}}</td>
+                <td>{{movie.score.iloc[1]}}</td>
+                <td>{{movie.star.iloc[1]}}</td>
+                <td>{{movie.votes.iloc[1]}}</td>
+                <td>{{movie.writer.iloc[1]}}</td>
+                <td>{{movie.year.iloc[1]}}</td>
+              </tr>
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[2]}}</td>
+                <td>{{movie.company.iloc[2]}}</td>
+                <td>{{movie.country.iloc[2]}}</td>
+                <td>{{movie.director.iloc[2]}}</td>
+                <td>{{movie.genre.iloc[2]}}</td>
+                <td>{{movie.gross.iloc[2]}}</td>
+                <td>{{movie.name.iloc[2]}}</td>
+                <td>{{movie.rating.iloc[2]}}</td>
+                <td>{{movie.released.iloc[2]}}</td>
+                <td>{{movie.runtime.iloc[2]}}</td>
+                <td>{{movie.score.iloc[2]}}</td>
+                <td>{{movie.star.iloc[2]}}</td>
+                <td>{{movie.votes.iloc[2]}}</td>
+                <td>{{movie.writer.iloc[2]}}</td>
+                <td>{{movie.year.iloc[2]}}</td>
+              </tr>
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[3]}}</td>
+                <td>{{movie.company.iloc[3]}}</td>
+                <td>{{movie.country.iloc[3]}}</td>
+                <td>{{movie.director.iloc[3]}}</td>
+                <td>{{movie.genre.iloc[3]}}</td>
+                <td>{{movie.gross.iloc[3]}}</td>
+                <td>{{movie.name.iloc[3]}}</td>
+                <td>{{movie.rating.iloc[3]}}</td>
+                <td>{{movie.released.iloc[3]}}</td>
+                <td>{{movie.runtime.iloc[3]}}</td>
+                <td>{{movie.score.iloc[3]}}</td>
+                <td>{{movie.star.iloc[3]}}</td>
+                <td>{{movie.votes.iloc[3]}}</td>
+                <td>{{movie.writer.iloc[3]}}</td>
+                <td>{{movie.year.iloc[3]}}</td>
+              </tr>
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[4]}}</td>
+                <td>{{movie.company.iloc[4]}}</td>
+                <td>{{movie.country.iloc[4]}}</td>
+                <td>{{movie.director.iloc[4]}}</td>
+                <td>{{movie.genre.iloc[4]}}</td>
+                <td>{{movie.gross.iloc[4]}}</td>
+                <td>{{movie.name.iloc[4]}}</td>
+                <td>{{movie.rating.iloc[4]}}</td>
+                <td>{{movie.released.iloc[4]}}</td>
+                <td>{{movie.runtime.iloc[4]}}</td>
+                <td>{{movie.score.iloc[4]}}</td>
+                <td>{{movie.star.iloc[4]}}</td>
+                <td>{{movie.votes.iloc[4]}}</td>
+                <td>{{movie.writer.iloc[4]}}</td>
+                <td>{{movie.year.iloc[4]}}</td>
+              </tr>
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[5]}}</td>
+                <td>{{movie.company.iloc[5]}}</td>
+                <td>{{movie.country.iloc[5]}}</td>
+                <td>{{movie.director.iloc[5]}}</td>
+                <td>{{movie.genre.iloc[5]}}</td>
+                <td>{{movie.gross.iloc[5]}}</td>
+                <td>{{movie.name.iloc[5]}}</td>
+                <td>{{movie.rating.iloc[5]}}</td>
+                <td>{{movie.released.iloc[5]}}</td>
+                <td>{{movie.runtime.iloc[5]}}</td>
+                <td>{{movie.score.iloc[5]}}</td>
+                <td>{{movie.star.iloc[5]}}</td>
+                <td>{{movie.votes.iloc[5]}}</td>
+                <td>{{movie.writer.iloc[5]}}</td>
+                <td>{{movie.year.iloc[5]}}</td>
+              </tr>
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[6]}}</td>
+                <td>{{movie.company.iloc[6]}}</td>
+                <td>{{movie.country.iloc[6]}}</td>
+                <td>{{movie.director.iloc[6]}}</td>
+                <td>{{movie.genre.iloc[6]}}</td>
+                <td>{{movie.gross.iloc[6]}}</td>
+                <td>{{movie.name.iloc[6]}}</td>
+                <td>{{movie.rating.iloc[6]}}</td>
+                <td>{{movie.released.iloc[6]}}</td>
+                <td>{{movie.runtime.iloc[6]}}</td>
+                <td>{{movie.score.iloc[6]}}</td>
+                <td>{{movie.star.iloc[6]}}</td>
+                <td>{{movie.votes.iloc[6]}}</td>
+                <td>{{movie.writer.iloc[6]}}</td>
+                <td>{{movie.year.iloc[6]}}</td>
+              </tr>              
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[7]}}</td>
+                <td>{{movie.company.iloc[7]}}</td>
+                <td>{{movie.country.iloc[7]}}</td>
+                <td>{{movie.director.iloc[7]}}</td>
+                <td>{{movie.genre.iloc[7]}}</td>
+                <td>{{movie.gross.iloc[7]}}</td>
+                <td>{{movie.name.iloc[7]}}</td>
+                <td>{{movie.rating.iloc[7]}}</td>
+                <td>{{movie.released.iloc[7]}}</td>
+                <td>{{movie.runtime.iloc[7]}}</td>
+                <td>{{movie.score.iloc[7]}}</td>
+                <td>{{movie.star.iloc[7]}}</td>
+                <td>{{movie.votes.iloc[7]}}</td>
+                <td>{{movie.writer.iloc[7]}}</td>
+                <td>{{movie.year.iloc[7]}}</td>
+              </tr>
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[8]}}</td>
+                <td>{{movie.company.iloc[8]}}</td>
+                <td>{{movie.country.iloc[8]}}</td>
+                <td>{{movie.director.iloc[8]}}</td>
+                <td>{{movie.genre.iloc[8]}}</td>
+                <td>{{movie.gross.iloc[8]}}</td>
+                <td>{{movie.name.iloc[8]}}</td>
+                <td>{{movie.rating.iloc[8]}}</td>
+                <td>{{movie.released.iloc[8]}}</td>
+                <td>{{movie.runtime.iloc[8]}}</td>
+                <td>{{movie.score.iloc[8]}}</td>
+                <td>{{movie.star.iloc[8]}}</td>
+                <td>{{movie.votes.iloc[8]}}</td>
+                <td>{{movie.writer.iloc[8]}}</td>
+                <td>{{movie.year.iloc[8]}}</td>
+              </tr>
+              <tr style="text-align: center;">
+
+                <td>{{movie.budget.iloc[9]}}</td>
+                <td>{{movie.company.iloc[9]}}</td>
+                <td>{{movie.country.iloc[9]}}</td>
+                <td>{{movie.director.iloc[9]}}</td>
+                <td>{{movie.genre.iloc[9]}}</td>
+                <td>{{movie.gross.iloc[9]}}</td>
+                <td>{{movie.name.iloc[9]}}</td>
+                <td>{{movie.rating.iloc[9]}}</td>
+                <td>{{movie.released.iloc[9]}}</td>
+                <td>{{movie.runtime.iloc[9]}}</td>
+                <td>{{movie.score.iloc[9]}}</td>
+                <td>{{movie.star.iloc[9]}}</td>
+                <td>{{movie.votes.iloc[9]}}</td>
+                <td>{{movie.writer.iloc[9]}}</td>
+                <td>{{movie.year.iloc[9]}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </center>
+</body>
+
+</html>

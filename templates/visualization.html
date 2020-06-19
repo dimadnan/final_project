@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploratory Data Analysis</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Helvetica" rel="stylesheet">
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color:#e6b91e;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #000000;
+}
+
+.active {
+  background-color: #353535;
+}
+</style>
+</head>
+<body style="background-color:#e6b91e">
+
+<style>
+.accordion {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #353535;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #e6b91e;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
+<body>
+
+  <ul>
+    <li><a href="http://127.0.0.1:5000/">Recommendation</a></li>
+    <li><a href="http://127.0.0.1:5000/visualization">Exploratory Data Analysis<span class="sr-only">(current)</a></li>
+    <li><a href="http://127.0.0.1:5000/dataset">Dataset</a></li>
+    <li style="float:right"><a class="active" href="https://imdb.com">IMDb Website</a></li>
+    <li><a href="http://127.0.0.1:5000/about">About</a></li>
+  </ul>
+
+      <center><img src="https://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png" width=100></center>
+      <center>
+      <center>
+          <h3>"Exploratory Data Analysis"</h3>
+      </center>
+
+<button class="accordion">Movies Count Based on Genre</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/genrecount.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>From the visualization above, we can see that movies from the dataset are dominated by three genres, by far. Those genres are: Comedy, Drama, and Action</p>
+</div>
+
+<button class="accordion">Movies Count Based on Country Produced</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/countryproduced.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>The plot above shows that most movies that are available on the IMDb dataset are dominated with USA-produced movies, followed by United Kingdom and France, respectively.</p>
+</div>
+
+<button class="accordion">Movies Gross Revenue by Genre</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/grossgenre.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>Based on the plot above, movies with Action, Adventure, Comedy, Drama, and Animation genres lead the other genre based on gross revenues gained.</p>
+</div>
+
+<button class="accordion">Movies Count Based on Rating</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/rating.png" class="img-fluid" alt="Responsive image"></center>
+  <p>Based on the rating system (United States), movies with R, PG-13, and PG are dominating the others with considerably huge margins.</p>
+</div>
+
+<button class="accordion">Number of Movies Produced by Year of Release</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/yearreleased.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>Based on the visualization above, the movies that are available in this dataset are mostly released on 2008, 2015, and 2007. with above 230 number of movie titles.</p>
+</div>
+
+<button class="accordion">Top 10 Movie Stars by Amount of Appearances</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/stars.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>According to the visualization above, the top 10 Actors by their number of appearances are Nicolas Cage, Robert De Niro, Denzel Washington, Tom Hanks, Bruce Willis, Johnny Depp, Tom Cruise, Ben Stiller, Adam Sandler, and John Cusack. I find it pretty interesting that all of them are actors, not a single actress.</p>
+</div>
+
+<button class="accordion">Top 10 Directors by Amount of Movies Made</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/directors.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>Based on the plot above, we can see that the top 5 most common directors are Woody Allen, Clint Eastwood, Steven Spielberg, Steven Soderbergh, and Ron Howard. Once again, this list are dominated by male directors, there is not a single female director on this list.</p>
+</div>
+
+<button class="accordion">Movies Runtime Distribution</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/duration.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>Based on the histogram above, 100 minutes runtime of movies are the most common found on this dataset.</p>
+</div>
+
+<button class="accordion">Movies Gross Revenue by Production Company</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/grosscompany.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>Production Companies that gained the most gross revenue are Lucasfilm, 20th Century Fox, Universal Pictures, Marvel Studios, and Warner Bros.</p>
+</div>
+
+<button class="accordion">Movies Gross Revenue by Movie Titles</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/grossname.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>The plot above shows the top 20 movies with the most budget.</p>
+</div>
+
+<button class="accordion">Movies Gross Revenue by Movie Stars</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/gross_stars.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>Based on the visualization above, we can see that movies starred by Johnny Depp, Mandy Moore, Tobey Maguire, Chris Evans, and Ian McKellen are the top 5. This visualization is pretty similar to the previous visualization, where I was exploring the top 20 movies based on gross revenue.</p>
+</div>
+
+<button class="accordion">Genre and Score Plot</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/genre_score.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>The plot above suggests that genres with considerably highest scores are Biography, Crime, and Drama. While the lowest scores are Horror, Fantasy, and Family.</p>
+</div>
+
+<button class="accordion">Correlation Between Features</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/corr.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>From the visualization above, the correlation between gross and budget features is the highest with 0.71. It is because I think the higher the budget for the movies, the gross revenue of the movies could also be high, and vice versa. The second highest correlation score is between votes and gross features. I suggest it is because votes mean that people have watched the movies. By that perspective, it could mean that the production companies gained their gross revenue from the people who have watched the movies.</p>
+</div>
+
+<button class="accordion">Budget and Gross Scatter Plot</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/genre_score.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>From the visualization above, we can see that movies that grossed over 600 million USD are only those who have the minimum of about 150 million USD budget. Other than that, I can see that movies with higher budget is inversely proportional to the amount of the movies.</p>
+</div>
+
+<button class="accordion">Budget and Gross by Genre</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/genre_score.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>From this plot, I want to show a similar plot as the previous one. The difference is that this plot also shows budget and gross by their genre. Movies who have big budget tend to have Action, Adventure, or Animation as their genre.</p>
+</div>
+
+<button class="accordion">Votes and Score Scatter Plot</button>
+<div class="panel">
+  <center><img src="http://127.0.0.1:5000/static/votesscore.png" class="img-fluid" alt="Responsive image"></center>
+  <br>
+  <p>The plot above shows that movies with the bigger number of votes have tendencies to gain bigger score.</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
