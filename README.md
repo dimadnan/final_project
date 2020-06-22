@@ -1,4 +1,4 @@
-# <h1><center>IMDb Movies Recommendation System </center></h1>
+# <h1><center>Movie Recommender System taken from IMDb Dataset </center></h1>
 
 <img src="https://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png" width=300> 
 
